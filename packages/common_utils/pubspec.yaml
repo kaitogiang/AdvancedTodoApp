@@ -10,6 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: 0.20.2
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -17,9 +20,19 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   build_runner: ^2.9.0
   flutter_gen_runner: ^5.12.0
+  intl_utils: ^2.8.1
+  custom_lint: ^0.7.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_intl:
+  enabled: true
+  arb_dir: lib/src/core/translations/
+  output_dir: lib/src/core/translations/generated/
+  class_name: AppTranslate
+  main_locale: en
 
 # The following section is specific to Flutter packages.
 flutter_gen:
@@ -34,7 +47,7 @@ flutter_gen:
     lottie: true
 
 flutter:
-
+  generate: true
   # To add assets to your package, add an assets section, like this:
   assets:
     - assets/images/

@@ -6,7 +6,7 @@ final rootNavigatorKey = GlobalKey<NavigatorState>();
 final mainNavigatorKey = GlobalKey<NavigatorState>();
 final goRouterConfig = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: '/login',
+  initialLocation: '/onboarding1',
   routes: [
     ShellRoute(
       navigatorKey: mainNavigatorKey,
@@ -19,7 +19,7 @@ final goRouterConfig = GoRouter(
           path: '/onboarding1',
           name: 'onboarding1',
           builder: (context, state) {
-            return Container();
+            return Scaffold(body: Container(color: Colors.red));
           },
         ),
         GoRoute(
