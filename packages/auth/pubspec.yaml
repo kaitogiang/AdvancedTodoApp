@@ -1,7 +1,10 @@
 name: auth
-description: "A new Flutter package project."
+description: "A simple and secure authentication package for Flutter and Dart applications.
+  Provides user sign-up, sign-in, sign-out, password reset, and session management
+  functionalities with easy integration for Firebase"
 version: 0.0.1
-homepage:
+author: "Victor Huy <victor.dev001442@gmail.com>"
+
 
 environment:
   sdk: ^3.8.1
