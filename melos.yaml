@@ -4,6 +4,8 @@ packages:
   - 'apps/*'
 enablePublish: false
 scripts:
+  run_app:
+    run: melos exec --scope="main_app" -- flutter run
   get_all:
     run: melos exec -- flutter pub get
   analyze:
