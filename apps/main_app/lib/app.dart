@@ -7,6 +7,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppInitializer.init(context);
     return MaterialApp.router(
       title: 'TodyList',
       theme: ThemeData(

@@ -1,3 +1,4 @@
+import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:main_app/features/base/main_app_wrapper.dart';
@@ -19,7 +20,7 @@ final goRouterConfig = GoRouter(
           path: '/onboarding1',
           name: 'onboarding1',
           builder: (context, state) {
-            return Scaffold(body: Container(color: Colors.red));
+            return OnboardingStep1Screen();
           },
         ),
         GoRoute(
