@@ -105,7 +105,9 @@ class _OnboardingView
       appBar: CustomAppBar(
         isShowBackIcon: false,
         onAction: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            LogInfo.log('OK');
+          },
           child: Text(
             AppTranslate.current.skip,
             style: AppTextStyles.body(
