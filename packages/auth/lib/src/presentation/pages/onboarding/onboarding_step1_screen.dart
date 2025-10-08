@@ -69,35 +69,32 @@ class _OnboardingView
   }
 
   Widget _buildOnboardingStep2(BuildContext context) {
-    return Padding(
-      padding: AppSize.s10.paddingHorizontal.copyWith(bottom: AppSize.s8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          BottomFadeBlur(
-            image: Assets.images.onboarding1Illustration1.image(
-              package: 'auth',
-            ),
-            subImageLeft: Assets.images.onboarding1Illustration2.image(
-              package: 'auth',
-            ),
-            subImageRight: Assets.images.onboarding1Illustration3.image(
-              package: 'auth',
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        BottomFadeBlur(
+          image: Assets.images.onboarding1Illustration1.image(package: 'auth'),
+          subImageLeft: Assets.images.onboarding1Illustration2.image(
+            package: 'auth',
           ),
-          Text(
-            AppTranslate.current.onboarding2Title,
-            style: AppTextStyles.h1(fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          subImageRight: Assets.images.onboarding1Illustration3.image(
+            package: 'auth',
           ),
-          Text(
-            AppTranslate.current.onboarding2Subtitle,
-            style: AppTextStyles.body(color: AppColors.textSecondary),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
+        ),
+        Text(
+          AppTranslate.current.onboarding2Title,
+          style: AppTextStyles.h1(fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+        AppSize.s16.toHGap,
+        Text(
+          AppTranslate.current.onboarding2Subtitle,
+          style: AppTextStyles.body(color: AppColors.textSecondary),
+          textAlign: TextAlign.center,
+        ),
+        AppSize.s36.toHGap,
+      ],
     );
   }
 
@@ -121,17 +118,27 @@ class _OnboardingView
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              _buildOnboardingStep2(context),
-              _buildIndicator(
-                numberOfPages: 3,
-                dotColor: AppColors.primary.withValues(alpha: 0.5),
-                activeColor: AppColors.primary,
+          child: Padding(
+            padding: AppSize.s10.paddingHorizontal.copyWith(bottom: AppSize.s8),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  _buildOnboardingStep2(context),
+                  _buildIndicator(
+                    numberOfPages: 3,
+                    dotColor: AppColors.primary.withValues(alpha: 0.5),
+                    activeColor: AppColors.primary,
+                  ),
+                  AppSize.s86.toHGap,
+                  AppButton(
+                    title: AppTranslate.current.Continue,
+                    onPressed: () {},
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
