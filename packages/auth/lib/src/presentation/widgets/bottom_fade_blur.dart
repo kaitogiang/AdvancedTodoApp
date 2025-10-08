@@ -1,17 +1,30 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
 
+class SubImagePosition {
+  const SubImagePosition({this.bottom, this.top, this.left, this.right});
+
+  final double? bottom;
+  final double? left;
+  final double? right;
+  final double? top;
+}
+
 class BottomFadeBlur extends StatelessWidget {
   const BottomFadeBlur({
     super.key,
     required this.image,
     required this.subImageLeft,
     required this.subImageRight,
+    required this.subImageLeftPosition,
+    required this.subImageRightPosition,
   });
 
   final Widget image;
   final Widget subImageLeft;
   final Widget subImageRight;
+  final SubImagePosition subImageLeftPosition;
+  final SubImagePosition subImageRightPosition;
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +56,20 @@ class BottomFadeBlur extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(left: 0, bottom: AppSize.s2, child: subImageLeft),
-        Positioned(right: 0, top: AppSize.s10, child: subImageRight),
+        Positioned(
+          top: subImageLeftPosition.top,
+          right: subImageLeftPosition.right,
+          bottom: subImageLeftPosition.bottom,
+          left: subImageLeftPosition.left,
+          child: subImageLeft,
+        ),
+        Positioned(
+          top: subImageRightPosition.top,
+          right: subImageRightPosition.right,
+          bottom: subImageRightPosition.bottom,
+          left: subImageRightPosition.left,
+          child: subImageRight,
+        ),
       ],
     );
   }

@@ -7,7 +7,7 @@ final rootNavigatorKey = GlobalKey<NavigatorState>();
 final mainNavigatorKey = GlobalKey<NavigatorState>();
 final goRouterConfig = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: '/onboarding1',
+  initialLocation: '/onboarding',
   routes: [
     ShellRoute(
       navigatorKey: mainNavigatorKey,
@@ -17,31 +17,21 @@ final goRouterConfig = GoRouter(
       observers: [CustomObserver()],
       routes: [
         GoRoute(
-          path: '/onboarding1',
-          name: 'onboarding1',
+          path: '/onboarding',
+          name: 'onboarding',
           builder: (context, state) {
-            return OnboardingStep1Screen();
-          },
-        ),
-        GoRoute(
-          path: '/onboarding2',
-          name: 'onboarding2',
-          builder: (context, state) {
-            return Container();
-          },
-        ),
-        GoRoute(
-          path: '/onboarding3',
-          name: 'onboarding3',
-          builder: (context, state) {
-            return Container();
+            return OnboardingScreen(
+              onSkip: () {
+                context.goNamed('login');
+              },
+            );
           },
         ),
         GoRoute(
           path: '/login',
           name: 'login',
           builder: (context, state) {
-            return Container();
+            return Scaffold(body: Container(color: Colors.red));
           },
         ),
         GoRoute(
