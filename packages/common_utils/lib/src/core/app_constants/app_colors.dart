@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Defines all brand and UI colors for Todyapp.
 class AppColors {
+  static const Color transparent = Colors.transparent;
+
   // ===== Primary Brand =====
   static const Color primary = Color(0xFF009688);
   static const Color primaryLight = Color(0xFF4DB6AC);

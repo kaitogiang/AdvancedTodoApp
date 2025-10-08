@@ -1,4 +1,5 @@
 import 'package:auth/src/presentation/generated/assets.gen.dart';
+import 'package:auth/src/presentation/widgets/bottom_fade_blur.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -26,13 +27,17 @@ class _OnboardingView
     extends WidgetView<OnboardingStep1Screen, _OnboardingController> {
   const _OnboardingView(super.state, {super.key});
 
-  Widget _buildIndicator({int numberOfPages = 0}) {
+  Widget _buildIndicator({
+    int numberOfPages = 0,
+    Color? dotColor,
+    Color? activeColor,
+  }) {
     return SmoothPageIndicator(
       controller: state.pageController,
       count: numberOfPages,
       effect: ExpandingDotsEffect(
-        dotColor: AppColors.white.withValues(alpha: 0.6),
-        activeDotColor: AppColors.white,
+        dotColor: dotColor ?? AppColors.white.withValues(alpha: 0.6),
+        activeDotColor: activeColor ?? AppColors.white,
         dotHeight: AppSize.s8,
         dotWidth: AppSize.s8,
       ),
@@ -63,52 +68,22 @@ class _OnboardingView
     );
   }
 
-  Widget _buildOnboardingStep2() {
+  Widget _buildOnboardingStep2(BuildContext context) {
     return Padding(
       padding: AppSize.s10.paddingHorizontal.copyWith(bottom: AppSize.s8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(
-            width: double.infinity,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Assets.images.onboarding1Illustration1.image(package: 'auth'),
-                Positioned(
-                  bottom: 0,
-                  child: Container(
-                    width: 200,
-                    height: 90,
-                    decoration: BoxDecoration(
-                      color: AppColors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.white,
-                          spreadRadius: 50,
-                          blurRadius: 50,
-                          blurStyle: BlurStyle.normal,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: 0,
-                  bottom: AppSize.s75,
-                  child: Assets.images.onboarding1Illustration2.image(
-                    package: 'auth',
-                  ),
-                ),
-                Positioned(
-                  right: 0,
-                  top: AppSize.s10,
-                  child: Assets.images.onboarding1Illustration3.image(
-                    package: 'auth',
-                  ),
-                ),
-              ],
+          BottomFadeBlur(
+            image: Assets.images.onboarding1Illustration1.image(
+              package: 'auth',
+            ),
+            subImageLeft: Assets.images.onboarding1Illustration2.image(
+              package: 'auth',
+            ),
+            subImageRight: Assets.images.onboarding1Illustration3.image(
+              package: 'auth',
             ),
           ),
           Text(
@@ -130,15 +105,32 @@ class _OnboardingView
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
+      appBar: CustomAppBar(
+        isShowBackIcon: false,
+        onAction: TextButton(
+          onPressed: () {},
+          child: Text(
+            AppTranslate.current.skip,
+            style: AppTextStyles.body(
+              color: AppColors.primary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              _buildOnboardingStep2(),
-              _buildIndicator(numberOfPages: 3),
+              _buildOnboardingStep2(context),
+              _buildIndicator(
+                numberOfPages: 3,
+                dotColor: AppColors.primary.withValues(alpha: 0.5),
+                activeColor: AppColors.primary,
+              ),
             ],
           ),
         ),
