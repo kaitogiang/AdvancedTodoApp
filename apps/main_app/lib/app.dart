@@ -1,6 +1,6 @@
+import 'package:auth/auth.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:main_app/core/navigation/navigation_config.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -8,7 +8,22 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppInitializer.init(context);
-    return MaterialApp.router(
+    // return MaterialApp.router(
+    //   title: 'TodyList',
+    //   theme: ThemeData(
+    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    //   ),
+    //   localizationsDelegates: [
+    //     AppTranslate.delegate,
+    //     GlobalMaterialLocalizations.delegate,
+    //     GlobalWidgetsLocalizations.delegate,
+    //     GlobalCupertinoLocalizations.delegate,
+    //   ],
+    //   supportedLocales: AppTranslate.delegate.supportedLocales,
+    //   locale: Locale('en'),
+    //   routerConfig: goRouterConfig,
+    // );
+    return MaterialApp(
       title: 'TodyList',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -21,7 +36,7 @@ class App extends StatelessWidget {
       ],
       supportedLocales: AppTranslate.delegate.supportedLocales,
       locale: Locale('en'),
-      routerConfig: goRouterConfig,
+      home: OnboardingStep1Screen(),
     );
   }
 }

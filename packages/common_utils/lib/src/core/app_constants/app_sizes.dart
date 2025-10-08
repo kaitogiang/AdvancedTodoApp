@@ -61,6 +61,22 @@ class AppSize {
 
   static double get s64 => scale(64);
 
+  static double get s65 => scale(65);
+  static double get s66 => scale(66);
+  static double get s67 => scale(67);
+  static double get s68 => scale(68);
+  static double get s69 => scale(69);
+  static double get s70 => scale(70);
+  static double get s71 => scale(71);
+  static double get s72 => scale(72);
+  static double get s73 => scale(73);
+  static double get s74 => scale(74);
+  static double get s75 => scale(75);
+  static double get s76 => scale(76);
+  static double get s77 => scale(77);
+  static double get s78 => scale(78);
+  static double get s79 => scale(79);
+
   static double get s80 => scale(80);
 
   static double get s100 => scale(100);
