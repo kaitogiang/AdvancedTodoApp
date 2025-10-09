@@ -3,6 +3,7 @@ description: "A simple and secure authentication package for Flutter and Dart ap
   Provides user sign-up, sign-in, sign-out, password reset, and session management
   functionalities with easy integration for Firebase"
 version: 0.0.1
+publish_to: 'none'
 author: "Victor Huy <victor.dev001442@gmail.com>"
 
 
@@ -17,6 +18,10 @@ dependencies:
   flutter_svg: ^2.1.6
   rive: ^0.11.1
   lottie: ^2.4.2
+
+  #Define local packages here
+  common_utils:
+    path: '../common_utils'
 
 dev_dependencies:
   flutter_test:

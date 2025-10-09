@@ -15,8 +15,8 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/todo-logo.svg
-  SvgGenImage get todoLogo => const SvgGenImage('assets/icons/todo-logo.svg');
+  /// File path: assets/icons/todo_logo.svg
+  SvgGenImage get todoLogo => const SvgGenImage('assets/icons/todo_logo.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [todoLogo];

@@ -7,6 +7,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppInitializer.init(context);
     return MaterialApp.router(
       title: 'TodyList',
       theme: ThemeData(
@@ -22,5 +23,20 @@ class App extends StatelessWidget {
       locale: Locale('en'),
       routerConfig: goRouterConfig,
     );
+    // return MaterialApp(
+    //   title: 'TodyList',
+    //   theme: ThemeData(
+    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    //   ),
+    //   localizationsDelegates: [
+    //     AppTranslate.delegate,
+    //     GlobalMaterialLocalizations.delegate,
+    //     GlobalWidgetsLocalizations.delegate,
+    //     GlobalCupertinoLocalizations.delegate,
+    //   ],
+    //   supportedLocales: AppTranslate.delegate.supportedLocales,
+    //   locale: Locale('en'),
+    //   home: OnboardingScreen(),
+    // );
   }
 }
