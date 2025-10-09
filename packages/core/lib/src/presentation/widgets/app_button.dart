@@ -1,7 +1,4 @@
-import 'package:common_utils/src/core/app_constants/app_colors.dart';
-import 'package:common_utils/src/core/app_constants/app_sizes.dart';
-import 'package:common_utils/src/core/app_constants/app_text_styles.dart';
-import 'package:common_utils/src/core/extensions/context_extension.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {

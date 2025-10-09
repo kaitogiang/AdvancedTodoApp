@@ -20,8 +20,8 @@ dependencies:
   lottie: ^2.4.2
 
   #Define local packages here
-  common_utils:
-    path: '../common_utils'
+  core:
+    path: '../core'
 
 dev_dependencies:
   flutter_test:

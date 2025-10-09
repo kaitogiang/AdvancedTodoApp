@@ -1,5 +1,4 @@
-import 'package:common_utils/common_utils.dart';
-import 'package:common_utils/src/presentation/generated/assets.gen.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,7 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: isShowBackIcon
           ? Container(
               padding: EdgeInsets.all(15),
-              child: Assets.icons.leftArrow.svg(package: 'common_utils'),
+              child: Assets.icons.leftArrow.svg(package: 'core'),
             )
           : const SizedBox.shrink(),
       centerTitle: true,

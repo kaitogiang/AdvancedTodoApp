@@ -1,6 +1,6 @@
-import 'package:auth/src/presentation/generated/assets.gen.dart';
+import 'package:auth/src/presentation/generated/assets.gen.dart' as auth;
 import 'package:auth/src/presentation/widgets/bottom_fade_blur.dart';
-import 'package:common_utils/common_utils.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -75,7 +75,7 @@ class _OnboardingView
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Assets.icons.todoLogo.svg(package: 'auth'),
+          auth.Assets.icons.todoLogo.svg(package: 'auth'),
           Text(
             AppTranslate.current.appName,
             style: AppTextStyles.h1(
@@ -98,11 +98,13 @@ class _OnboardingView
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         BottomFadeBlur(
-          image: Assets.images.onboarding1Illustration1.image(package: 'auth'),
-          subImageLeft: Assets.images.onboarding1Illustration2.image(
+          image: auth.Assets.images.onboarding1Illustration1.image(
             package: 'auth',
           ),
-          subImageRight: Assets.images.onboarding1Illustration3.image(
+          subImageLeft: auth.Assets.images.onboarding1Illustration2.image(
+            package: 'auth',
+          ),
+          subImageRight: auth.Assets.images.onboarding1Illustration3.image(
             package: 'auth',
           ),
           subImageLeftPosition: SubImagePosition(left: 0, bottom: AppSize.s4),
@@ -130,11 +132,13 @@ class _OnboardingView
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         BottomFadeBlur(
-          image: Assets.images.onboarding2Illustration1.image(package: 'auth'),
-          subImageLeft: Assets.images.onboarding2Illustration3.image(
+          image: auth.Assets.images.onboarding2Illustration1.image(
             package: 'auth',
           ),
-          subImageRight: Assets.images.onboarding2Illustration2.image(
+          subImageLeft: auth.Assets.images.onboarding2Illustration3.image(
+            package: 'auth',
+          ),
+          subImageRight: auth.Assets.images.onboarding2Illustration2.image(
             package: 'auth',
           ),
           subImageLeftPosition: SubImagePosition(left: 0, bottom: AppSize.s4),
