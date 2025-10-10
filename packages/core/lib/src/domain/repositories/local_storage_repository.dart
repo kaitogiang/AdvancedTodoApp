@@ -2,7 +2,7 @@
 abstract class LocalStorageRepository {
   Future<dynamic> readKey(String key);
 
-  Future<void> saveKey({required String key, required String value});
+  Future<void> saveKey({required String key, required dynamic value});
 
   Future<void> deleteKey({required String key});
 }

@@ -19,7 +19,17 @@ class ConfigLocalStorageImpl implements LocalStorageRepository {
   }
 
   @override
-  Future<void> saveKey({required String key, required String value}) async {
-    await sharedPrefs.setString(key, value);
+  Future<void> saveKey({required String key, required dynamic value}) async {
+    if (value is String) {
+      await sharedPrefs.setString(key, value.toString());
+    } else if (value is double) {
+      await sharedPrefs.setDouble(key, value.toDouble());
+    } else if (value is int) {
+      await sharedPrefs.setInt(key, value.toInt());
+    } else if (value is bool) {
+      await sharedPrefs.setBool(key, value);
+    } else {
+      await sharedPrefs.setStringList(key, value);
+    }
   }
 }

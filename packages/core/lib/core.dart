@@ -1,4 +1,6 @@
 export 'package:flutter_localizations/flutter_localizations.dart';
+export 'package:get_it/get_it.dart';
+export 'package:go_router/go_router.dart';
 
 export './src/app_initializer.dart';
 export './src/core/app_constants/app_colors.dart';
@@ -9,7 +11,9 @@ export './src/core/extensions/context_extension.dart';
 export './src/core/extensions/number_extension.dart';
 export './src/core/extensions/padding_extension.dart';
 export './src/core/log/log_utils.dart';
+export './src/core/navigation/app_navigator.dart';
 export './src/core/translations/generated/l10n.dart';
+export './src/domain/repositories/local_storage_repository.dart';
 export './src/presentation/generated/assets.gen.dart';
 export './src/presentation/widgets/app_button.dart';
 export './src/presentation/widgets/custom_app_bar.dart';

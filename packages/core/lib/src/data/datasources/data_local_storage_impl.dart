@@ -18,7 +18,7 @@ class DataLocalStorageImpl implements LocalStorageRepository {
   }
 
   @override
-  Future<void> saveKey({required String key, required String value}) async {
+  Future<void> saveKey({required String key, required dynamic value}) async {
     // TODO: implement saveKey
     throw UnimplementedError();
   }
