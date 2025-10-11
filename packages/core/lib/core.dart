@@ -14,6 +14,7 @@ export './src/core/log/log_utils.dart';
 export './src/core/navigation/app_navigator.dart';
 export './src/core/translations/generated/l10n.dart';
 export './src/domain/repositories/local_storage_repository.dart';
+export './src/domain/usecase_base/usecase_base.dart';
 export './src/presentation/generated/assets.gen.dart';
 export './src/presentation/widgets/app_button.dart';
 export './src/presentation/widgets/custom_app_bar.dart';
